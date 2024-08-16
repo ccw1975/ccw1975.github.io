@@ -1,0 +1,106 @@
+<!DOCTYPE html>    
+<html lang="en">    
+<head>    
+<meta charset="UTF-8">    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+<title>自适应布局示例</title>    
+<link rel="stylesheet" href="styles.css">    
+<style>  
+    .content section {  
+        display: none; /* 默认隐藏所有内容部分 */  
+    }  
+    .content section.active {  
+        display: block; /* 显示激活的内容部分 */  
+    }  
+</style>  
+</head>    
+<body>    
+<div class="container">    
+    <nav>    
+        <ul>    
+            <li><a href="#about" onclick="showSection('about')">关于我们</a></li>    
+            <li><a href="#team" onclick="showSection('team')">队员简介</a></li>    
+            <li><a href="#work" onclick="showSection('work')">工作内容</a></li>    
+            <li><a href="#events" onclick="showSection('events')">精彩活动</a></li>    
+            <li><a href="#contact" onclick="showSection('contact')">联系我们</a></li>    
+        </ul>    
+    </nav>    
+    <div class="content">    
+        <section id="about" class="active">    
+            <div class="q-a-container">  
+                <div class="questions">Q1:HRT-D&E是什么样的组织?</div>  
+                <div class="ans">&nbsp;&nbsp;&nbsp;&nbsp;哈尔滨工业大学电动&无人驾驶方程式赛车队(HRT-D&E),由原HRT电动方程式赛车队及HRT无人驾驶方程式赛车队于2019年12 月合并而成,是一支既具历史底蕴又具有年轻活力的车队。</div>  
+                <div class="image-container">  
+                    <img src="hrt1.jpg" alt="HRT1">  
+                    <img src="hrt2.jpg" alt="HRT2">  
+                </div>  
+                <div class="questions">Q2:电气组都负责哪些工作？</div>  
+                <div class="ans">&nbsp;&nbsp;&nbsp;&nbsp;...</div>  
+            </div>  
+        </section> 
+
+        <section id="team">    
+            <div class="employee-grid">  
+                <div class="employee">  
+                    <h3>赵金鑫</h3>  
+                    <p>职位：副队长</p>  
+                    <p>21级学长</p>  
+                </div>  
+                <div class="employee">  
+                    <h3>刘科良</h3>  
+                    <p>职位：组长</p>  
+                    <p>21级学长，江湖人称“院士”</p>  
+                </div>
+                <div class="employee">  
+                  <h3>曲天泽</h3>  
+                  <p>职位：技术总监</p>  
+                  <p>21级学长，江湖人称“曲泽天下”</p>           
+                </div> 
+                <div class="employee">   
+                  <p>职位：组长</p>  
+                  <p>21级学长，江湖人称“院士”</p>  
+                </div>
+            </div> 
+        </section>    
+        <section id="work">    
+            <h2>工作内容</h2>    
+            <p>这里是工作内容介绍...</p>    
+        </section>    
+        <section id="events">    
+            <h2>精彩活动</h2>    
+            <p>这里是精彩活动介绍...</p>    
+        </section>    
+        <section id="contact">    
+            <h2>联系我们</h2>    
+            <div class="call">
+                <p>快来联系我们吧！</p>
+                <p>欢迎小东西加入！</p>
+                <p>联系方式:QQ:1794578021</p>
+            </div>
+        </section>    
+    </div>    
+</div>    
+  
+<script>  
+function showSection(id) {  
+    // 移除所有section的active类  
+    var sections = document.querySelectorAll('.content section');  
+    sections.forEach(function(section) {  
+        section.classList.remove('active');  
+    });  
+      
+    // 添加active类到被点击的section  
+    var selectedSection = document.getElementById(id);  
+    if (selectedSection) {  
+        selectedSection.classList.add('active');  
+    }  
+}  
+  
+// 页面加载时默认显示“关于我们”  
+window.onload = function() {  
+    showSection('about');  
+};  
+</script>  
+  
+</body>    
+</html>
